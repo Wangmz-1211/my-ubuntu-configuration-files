@@ -100,7 +100,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/opt/node-v12.22.12-linux-x64/bin
 
 # golang
-#export GOROOT=/opt/go-v1.9.2
 export GOROOT=/opt/go-v1.19.5
 
 export PATH=$PATH:$GOROOT/bin
@@ -174,3 +173,4 @@ elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
 fi
 
 unset env
+
