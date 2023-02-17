@@ -95,7 +95,6 @@
     nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
     vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
     # vpn_ip                # virtual private network indicator
-     #load                  # CPU load
     # disk_usage            # disk usage
      ram                   # free RAM
     # swap                  # used swap
@@ -113,6 +112,7 @@
     # wifi                  # wifi speed
     # example               # example user-defined segment (see prompt_example function below)
     aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+     #load                  # CPU load
   )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
@@ -186,7 +186,7 @@
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=232
-  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=7
+  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=255
   # Custom icon.
   typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=''
 
@@ -839,7 +839,7 @@
 
   ######################################[ load: CPU load ]######################################
   # Show average CPU load over this many last minutes. Valid values are 1, 5 and 15.
-  typeset -g POWERLEVEL9K_LOAD_WHICH=5
+  typeset -g POWERLEVEL9K_LOAD_WHICH=1
   # Load color when load is under 50%.
   typeset -g POWERLEVEL9K_LOAD_NORMAL_FOREGROUND=0
   typeset -g POWERLEVEL9K_LOAD_NORMAL_BACKGROUND=2

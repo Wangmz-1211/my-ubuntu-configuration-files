@@ -96,14 +96,13 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # node.js
-#export PATH=$PATH:/opt/node-v18.12.1-linux-x64/bin
-export PATH=$PATH:/opt/node-v12.22.12-linux-x64/bin
+#export PATH=$PATH:/opt/node-v12.22.12-linux-x64/bin
+export PATH=$PATH:/opt/node-v18.13.0-linux-x64/bin
 
 # golang
-export GOROOT=/opt/go-v1.19.5
-
+export GOROOT=/opt/go
 export PATH=$PATH:$GOROOT/bin
-export GOPATH=$HOME/code
+export GOPATH=$HOME/code/golang
 
 
 # anaconda
@@ -151,26 +150,25 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# run ssh-agent when git
-env=~/.ssh/agent.env
+## run ssh-agent when git
+#env=~/.ssh/agent.env
+#
+#agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
+#
+#agent_start () {
+#    (umask 077; ssh-agent >| "$env")
+#    . "$env" >| /dev/null ; }
+#
+#agent_load_env
+#
+## agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2=agent not running
+#agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
 
-agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
-
-agent_start () {
-    (umask 077; ssh-agent >| "$env")
-    . "$env" >| /dev/null ; }
-
-agent_load_env
-
-# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2=agent not running
-agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
-
-if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
-    agent_start
-    ssh-add
-elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
-    ssh-add
-fi
-
-unset env
-
+#if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+#    agent_start
+#    ssh-add
+#elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
+#    ssh-add
+#fi
+#
+#unset env
