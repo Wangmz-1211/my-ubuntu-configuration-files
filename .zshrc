@@ -88,6 +88,10 @@ plugins=(
 	aws
 	docker
 	golang
+        python
+        pyenv
+        ubuntu
+        conda-zsh-completion
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -172,3 +176,4 @@ unset __conda_setup
 #fi
 #
 #unset env
+alias wine='LANG=zh_CN.UTF-8 wine'
